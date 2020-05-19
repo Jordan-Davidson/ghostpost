@@ -1,0 +1,23 @@
+<h1>GhostPost Machine</h1>
+<div>
+    <h3><a href='add'>Create your own roast or boast!</a></h3>
+</div>
+<div>
+    <h4>
+    <a href='/'>See all</a>
+    <a href='boasts'>only see boasts!</a>
+    <a href='roasts'>only see roasts!</a>
+    <a href='top'>most popular!</a>
+    </h4>
+</div>
+{%for post in data%}
+{%if post.roastBoast == True%}
+<h2><a href= 'posts/{{post.id}}'>Roast!</a></h2>
+{%elif post.roastBoast == False%}
+<h2><a href= 'posts/{{post.id}}'>Boast!</a></h2>
+{%endif%}
+<p>{{post.post}}</p>
+<p>{{post.time}}</p>
+<a href = 'upvotes/{{post.id}}/'>upvotes: {{post.upvotes}}</a>
+<a href = 'downvotes/{{post.id}}/'>downvotes: {{post.downvotes}} </a>
+{%endfor%}

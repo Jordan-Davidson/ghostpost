@@ -1,0 +1,10 @@
+<a href='/'>Go home</a>
+{%if data.roastBoast == True%}
+    <h1>Roast!</h1>
+{%elif data.roastBoast == False%}
+    <h1>Boast!</h1>
+{%endif%}
+    <h3>{{data.post}}</h3>
+    <p>{{data.time}}</p>
+<a href = '/upvotes/{{data.id}}/'>upvotes: {{data.upvotes}}</a>
+<a href = '/downvotes/{{data.id}}/'>downvotes: {{data.downvotes}} </a>
